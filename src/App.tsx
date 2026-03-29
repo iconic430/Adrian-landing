@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import { 
   ShieldCheck, 
   MapPin, 
-  Mail, 
+  MessageCircle, 
   Clock, 
   CheckCircle2, 
   MonitorSmartphone,
@@ -28,13 +28,13 @@ export default function App() {
         <div className="flex justify-between items-center max-w-md mx-auto">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-green-500 rounded-sm" title="Logo Placeholder" />
-            <span className="text-brand-navy font-bold text-lg tracking-tight">AESTHETIC DENTAL</span>
+            <span className="text-brand-navy font-bold text-lg tracking-tight uppercase">AESTHETIC DENTAL CENTER</span>
           </div>
           <button 
             onClick={scrollToForm}
             className="bg-brand-cyan text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-brand-cyan/20 active:scale-95 transition-all"
           >
-            Agendar Cita
+            Agendar
           </button>
         </div>
       </nav>
@@ -251,15 +251,18 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100">
+              <button 
+                onClick={scrollToForm}
+                className="w-full flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 text-left active:bg-gray-100 transition-colors"
+              >
                 <div className="bg-brand-cyan/10 p-3 rounded-xl text-brand-cyan">
-                  <Mail size={24} />
+                  <MessageCircle size={24} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-brand-navy uppercase tracking-wider mb-1">Correo Electrónico</p>
-                  <p className="text-sm text-brand-steel">aestheticdentalnogales@gmail.com</p>
+                  <p className="text-xs font-bold text-brand-navy uppercase tracking-wider mb-1">Contáctanos</p>
+                  <p className="text-sm text-brand-steel font-bold">WhatsApp</p>
                 </div>
-              </div>
+              </button>
 
               <div className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100">
                 <div className="bg-brand-cyan/10 p-3 rounded-xl text-brand-cyan">
@@ -278,35 +281,6 @@ export default function App() {
           </p>
         </div>
       </section>
-
-      {/* Footer - Mobile Optimized */}
-      <footer className="bg-brand-navy text-white py-12 px-4 border-t border-white/5">
-        <div className="max-w-md mx-auto flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="w-6 h-6 bg-green-500 rounded-sm" />
-            <span className="font-bold text-base tracking-tight">AESTHETIC DENTAL</span>
-          </div>
-          
-          <div className="space-y-6 mb-10">
-            <div className="flex flex-col items-center gap-2">
-              <MapPin size={18} className="text-brand-cyan" />
-              <p className="text-xs text-gray-400 px-4">Adolfo lopez mateos #171 local 2, Nogales, Sonora</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Mail size={18} className="text-brand-cyan" />
-              <p className="text-xs text-gray-400">aestheticdentalnogales@gmail.com</p>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <Clock size={18} className="text-brand-cyan" />
-              <p className="text-xs text-gray-400">Lun - Sáb: 9:00am - 6:00pm</p>
-            </div>
-          </div>
-          
-          <div className="pt-8 border-t border-white/5 w-full text-[10px] text-gray-500">
-            <p>© 2026 Aesthetic Dental Nogales.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
