@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #3BA9E0;
+  --color-brand-navy: #1A3050;
+  --color-brand-steel: #607D8B;
+  --color-brand-carbon: #333333;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply text-brand-carbon font-sans bg-white;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply text-brand-navy font-bold;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
