@@ -1,0 +1,7 @@
+{
+  "name": "Aesthetic Dental Nogales",
+  "description": "Clínica dental premium en Nogales especializada en implantes dentales con tecnología de vanguardia.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
