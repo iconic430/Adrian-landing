@@ -157,7 +157,7 @@ export default function App() {
                     <p className="text-xs text-brand-steel">Casi dos décadas transformando sonrisas en la frontera.</p>
                   </div>
                 </div>
-                <div className="flex gap-3">
+                <div id="apartado-horarios" className="flex gap-3">
                   <div className="bg-white p-2 rounded-xl shadow-sm text-brand-cyan h-fit">
                     <Clock size={20} />
                   </div>
@@ -180,13 +180,10 @@ export default function App() {
           </div>
           <div className="p-8">
             <h2 className="text-2xl font-bold mb-2">Dr. Adrián Valera Muñoz</h2>
-            <p className="text-brand-cyan font-bold text-[10px] tracking-widest uppercase mb-4">Universidad Cuauhtemoc</p>
+            <p className="text-brand-cyan font-bold text-[10px] tracking-widest uppercase mb-4">Universidad Cuauhtémoc, Guadalajara</p>
             <p className="text-sm text-brand-steel leading-relaxed mb-6">
               Especialista en restauración dental con 19 años de trayectoria. Apasionado por devolver la confianza a sus pacientes mediante tecnología de vanguardia.
             </p>
-            <div className="italic text-xs text-brand-steel mb-6 p-3 bg-gray-50 rounded-xl border-l-4 border-brand-cyan">
-              Insertar (Más detalles sobre estudios y trayectoria)
-            </div>
             <button 
               onClick={scrollToForm}
               className="w-full border-2 border-brand-navy text-brand-navy py-3 rounded-xl font-bold text-sm active:bg-brand-navy active:text-white transition-all"
@@ -238,7 +235,12 @@ export default function App() {
 
             {/* Contact Details Grid */}
             <div className="grid grid-cols-1 gap-6">
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100">
+              <a 
+                href="https://www.google.com/maps/place/Av.+Adolfo+L%C3%B3pez+Mateos+%23171-local+2,+Fund%C3%B3+Legal,+Centro,+84000+Heroica+Nogales,+Son./@31.3289781,-110.9454406,19.24z/data=!4m6!3m5!1s0x86d6ad26a874dcd7:0x96c57594bc259565!8m2!3d31.3290493!4d-110.9448009!16s%2Fg%2F11l30fkjfc?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 text-left active:bg-gray-100 transition-colors"
+              >
                 <div className="bg-brand-cyan/10 p-3 rounded-xl text-brand-cyan">
                   <MapPin size={24} />
                 </div>
@@ -249,7 +251,7 @@ export default function App() {
                     Nogales, Sonora, México
                   </p>
                 </div>
-              </div>
+              </a>
 
               <button 
                 onClick={scrollToForm}
@@ -264,7 +266,10 @@ export default function App() {
                 </div>
               </button>
 
-              <div className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100">
+              <button 
+                onClick={() => document.getElementById('apartado-horarios')?.scrollIntoView({ behavior: 'smooth' })}
+                className="flex items-start gap-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 text-left active:bg-gray-100 transition-colors"
+              >
                 <div className="bg-brand-cyan/10 p-3 rounded-xl text-brand-cyan">
                   <Clock size={24} />
                 </div>
@@ -272,7 +277,7 @@ export default function App() {
                   <p className="text-xs font-bold text-brand-navy uppercase tracking-wider mb-1">Horarios de Atención</p>
                   <p className="text-sm text-brand-steel">Lunes a Sábado: 9:00am - 6:00pm</p>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
           
