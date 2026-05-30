@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useEffect } from "react";
 import { motion } from "motion/react";
 import { 
   ShieldCheck, 
@@ -12,10 +13,24 @@ import {
   CheckCircle2, 
   MonitorSmartphone,
   ChevronRight,
-  Star
+  Star,
+  DollarSign,
+  Languages,
+  Navigation,
+  FileCheck
 } from "lucide-react";
 
 export default function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const scrollToForm = () => {
     const formElement = document.getElementById("formulario");
     formElement?.scrollIntoView({ behavior: "smooth" });
@@ -27,14 +42,19 @@ export default function App() {
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 py-4">
         <div className="flex justify-between items-center max-w-md mx-auto">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-green-500 rounded-sm" title="Logo Placeholder" />
+            <img 
+              src="https://i.postimg.cc/pLVgpW65/logo.png" 
+              alt="AESTHETIC DENTAL CENTER Logo" 
+              className="h-8 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
             <span className="text-brand-navy font-bold text-lg tracking-tight uppercase">AESTHETIC DENTAL CENTER</span>
           </div>
           <button 
             onClick={scrollToForm}
             className="bg-brand-cyan text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg shadow-brand-cyan/20 active:scale-95 transition-all"
           >
-            Agendar
+            Contáctanos
           </button>
         </div>
       </nav>
@@ -68,7 +88,7 @@ export default function App() {
                 onClick={scrollToForm}
                 className="bg-brand-cyan text-white w-full py-4 rounded-2xl font-bold text-lg shadow-xl shadow-brand-cyan/30 flex items-center justify-center gap-2 active:scale-[0.98] transition-all"
               >
-                Agendar Cita Ahora <ChevronRight size={20} />
+                Agendar Cita <ChevronRight size={20} />
               </button>
               
               <div className="flex flex-col items-center gap-2">
@@ -96,9 +116,12 @@ export default function App() {
             </div>
 
             <div className="relative aspect-[4/3] rounded-3xl bg-brand-navy overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 flex items-center justify-center text-white/20 italic text-center p-6 text-sm">
-                Insertar (Imagen Premium de Clínica o Paciente Sonriente)
-              </div>
+              <img 
+                src="https://i.postimg.cc/J4rTQTc5/Captura-de-pantalla-2026-05-30-a-la(s)-12-39-52-p-m.png" 
+                alt="Tecnología de Punta" 
+                className="absolute inset-0 w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
               <div className="absolute bottom-4 left-4 right-4 glass-card p-4 rounded-xl shadow-lg flex items-center gap-3">
                 <div className="bg-brand-cyan p-2 rounded-lg text-white">
                   <MonitorSmartphone size={20} />
@@ -141,29 +164,89 @@ export default function App() {
                 <li className="flex items-center gap-2 text-xs"><CheckCircle2 size={14} className="text-brand-cyan" /> Materiales Premium (Titanio/Cerámica)</li>
               </ul>
               <button onClick={scrollToForm} className="w-full bg-brand-cyan py-3 rounded-xl font-bold text-sm active:scale-95 transition-all">
-                Agendar Evaluación Digital
+                Agendar Cita
               </button>
             </div>
 
-            <div className="p-6 rounded-3xl border border-gray-100 bg-gray-50 flex flex-col gap-4">
-              <h3 className="text-lg font-bold text-brand-navy">¿Por qué elegirnos?</h3>
+            <div className="p-6 rounded-3xl border border-gray-100 bg-gray-50 flex flex-col gap-5">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] uppercase tracking-wider font-extrabold text-brand-cyan">Cruzando la Frontera por tu Sonrisa</span>
+                <h3 className="text-xl font-extrabold text-brand-navy leading-tight">¿Por qué pacientes de Phoenix y Arizona nos eligen?</h3>
+                <p className="text-xs text-brand-steel mt-1">
+                  Brindamos salud dental de nivel internacional con comodidades únicas para facilitarle el viaje.
+                </p>
+              </div>
+              
               <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="bg-white p-2 rounded-xl shadow-sm text-brand-cyan h-fit">
+                <div className="flex gap-3.5 p-3 rounded-2xl bg-white hover:shadow-md transition-shadow">
+                  <div className="bg-brand-cyan/10 p-2.5 rounded-xl text-brand-cyan h-fit">
+                    <DollarSign size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-brand-navy">Ahorro de hasta el 70%</p>
+                    <p className="text-xs text-brand-steel mt-0.5 leading-relaxed">
+                      El mismo nivel de implantes y tecnología premium que en Arizona, pero a una fracción del costo (ahorros promedio del 70% comparado con dentistas en Phoenix).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3.5 p-3 rounded-2xl bg-white hover:shadow-md transition-shadow">
+                  <div className="bg-brand-cyan/10 p-2.5 rounded-xl text-brand-cyan h-fit">
+                    <Navigation size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-brand-navy">Ubicación Estratégica</p>
+                    <p className="text-xs text-brand-steel mt-0.5 leading-relaxed">
+                      A solo 2.5 o 3 horas conduciendo de Phoenix. Ubicados de manera extremadamente accesible tras cruzar la frontera de Nogales. Ofrecemos indicaciones claras y seguras.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3.5 p-3 rounded-2xl bg-white hover:shadow-md transition-shadow">
+                  <div className="bg-brand-cyan/10 p-2.5 rounded-xl text-brand-cyan h-fit">
+                    <Languages size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-brand-navy">Equipo 100% Bilingüe</p>
+                    <p className="text-xs text-brand-steel mt-0.5 leading-relaxed">
+                      Sin barreras de idioma. El Dr. Adrián y todo nuestro staff médico se comunican perfectamente en inglés y español para brindarte total confianza y claridad.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3.5 p-3 rounded-2xl bg-white hover:shadow-md transition-shadow">
+                  <div className="bg-brand-cyan/10 p-2.5 rounded-xl text-brand-cyan h-fit">
+                    <FileCheck size={20} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-brand-navy">Aceptamos Seguros de EE. UU.</p>
+                    <p className="text-xs text-brand-steel mt-0.5 leading-relaxed">
+                      Te proporcionamos toda la documentación necesaria con codificación ADA listos para presentar, facilitando tu reembolso con pólizas dentales PPO norteamericanas.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3.5 p-3 rounded-2xl bg-white hover:shadow-md transition-shadow">
+                  <div className="bg-brand-cyan/10 p-2.5 rounded-xl text-brand-cyan h-fit">
                     <ShieldCheck size={20} />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-brand-navy">Experiencia Comprobada</p>
-                    <p className="text-xs text-brand-steel">Casi dos décadas transformando sonrisas en la frontera.</p>
+                    <p className="text-sm font-extrabold text-brand-navy">Garantía y Calidad Certificada</p>
+                    <p className="text-xs text-brand-steel mt-0.5 leading-relaxed">
+                      Utilizamos materiales aprobados por la FDA. Casi dos décadas de experiencia y análisis clínico digital 3D garantizan tratamientos seguros con estándares de EE. UU.
+                    </p>
                   </div>
                 </div>
-                <div id="apartado-horarios" className="flex gap-3">
-                  <div className="bg-white p-2 rounded-xl shadow-sm text-brand-cyan h-fit">
+
+                <div id="apartado-horarios" className="flex gap-3.5 p-3 rounded-2xl bg-white hover:shadow-md transition-shadow">
+                  <div className="bg-brand-cyan/10 p-2.5 rounded-xl text-brand-cyan h-fit">
                     <Clock size={20} />
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-brand-navy">Atención Eficiente</p>
-                    <p className="text-xs text-brand-steel">Horarios flexibles de Lunes a Sábado para su comodidad.</p>
+                    <p className="text-sm font-extrabold text-brand-navy">Atención "Mismo Día" y Horarios</p>
+                    <p className="text-xs text-brand-steel mt-0.5 leading-relaxed">
+                      Servicio ágil coordinado en horarios flexibles (Lunes a Sábado de 9:00 AM a 6:00 PM) diseñado para pacientes que viajan desde Phoenix y desean retornar a su hogar el mismo día.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -175,8 +258,13 @@ export default function App() {
       {/* Doctor Section - Mobile Optimized */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-md mx-auto bg-white rounded-[30px] shadow-lg overflow-hidden border border-gray-100">
-          <div className="aspect-square bg-gray-200 flex items-center justify-center italic text-gray-400 text-xs p-8 text-center">
-            Insertar (Foto Profesional del Dr. Adrián Valera Muñoz)
+          <div className="aspect-square bg-gray-100 relative overflow-hidden">
+            <img 
+              src="https://i.postimg.cc/LXhPX1tF/Dentist-Adria-n-smiling-professio-202605301248.jpg" 
+              alt="Dr. Adrián Valera Muñoz" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <div className="p-8">
             <h2 className="text-2xl font-bold mb-2">Dr. Adrián Valera Muñoz</h2>
@@ -188,7 +276,7 @@ export default function App() {
               onClick={scrollToForm}
               className="w-full border-2 border-brand-navy text-brand-navy py-3 rounded-xl font-bold text-sm active:bg-brand-navy active:text-white transition-all"
             >
-              Contactar al Doctor
+              Agendar Cita
             </button>
           </div>
         </div>
@@ -204,8 +292,24 @@ export default function App() {
             <p className="text-sm text-gray-400">Dé el primer paso hacia su nueva sonrisa hoy mismo.</p>
           </div>
 
-          <div className="bg-white/10 border-2 border-dashed border-white/20 rounded-[30px] p-12 flex items-center justify-center">
-            <span className="text-2xl font-bold text-white/50 tracking-widest uppercase">Formulario</span>
+          <div className="bg-white rounded-[30px] p-2 sm:p-4 shadow-2xl overflow-hidden min-h-[575px]">
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/sWgB2sGIXl1Ud25TMqwN"
+              style={{ width: "100%", height: "575px", border: "none", borderRadius: "16px" }}
+              id="inline-sWgB2sGIXl1Ud25TMqwN" 
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Form Carillas"
+              data-height="575"
+              data-layout-iframe-id="inline-sWgB2sGIXl1Ud25TMqwN"
+              data-form-id="sWgB2sGIXl1Ud25TMqwN"
+              title="Form Carillas"
+            />
           </div>
         </div>
       </section>
@@ -262,7 +366,7 @@ export default function App() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-brand-navy uppercase tracking-wider mb-1">Contáctanos</p>
-                  <p className="text-sm text-brand-steel font-bold">WhatsApp</p>
+                  <p className="text-sm text-brand-steel font-bold">Enviar Mensaje</p>
                 </div>
               </button>
 
