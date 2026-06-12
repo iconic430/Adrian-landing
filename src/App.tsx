@@ -136,6 +136,59 @@ export default function App() {
         </div>
       </section>
 
+      {/* Promoción Especial Section */}
+      <section className="py-6 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-md mx-auto">
+          <div className="bg-brand-cyan/10 border border-brand-cyan/20 rounded-[30px] p-6 text-center relative overflow-hidden shadow-lg shadow-brand-cyan/5">
+            <div className="absolute top-0 right-0 -mr-6 -mt-6 w-24 h-24 bg-brand-cyan/5 rounded-full" />
+            
+            <span className="inline-block bg-brand-cyan text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-md shadow-brand-cyan/10">
+              Oferta Especial Limitada
+            </span>
+            
+            <h3 className="text-xl font-extrabold text-brand-navy mb-2">
+              Tratamiento de Implantes Dentales
+            </h3>
+            
+            <p className="text-xs text-brand-steel mb-5 px-4 leading-relaxed">
+              Recupere su sonrisa definitiva con tecnología digital avanzada y materiales de gama premium.
+            </p>
+
+            <div className="flex items-center justify-center gap-4 mb-5">
+              <div className="text-left">
+                <span className="text-[10px] text-brand-steel font-extrabold block uppercase tracking-wider mb-0.5">Antes</span>
+                <span className="text-base line-through text-brand-steel/60 font-semibold decoration-red-500 decoration-2">
+                  $35,000 MXN
+                </span>
+              </div>
+              
+              <div className="h-8 w-px bg-brand-cyan/20" />
+              
+              <div className="text-left">
+                <span className="text-[10px] text-brand-cyan font-black block uppercase tracking-wider mb-0.5">Ahora</span>
+                <span className="text-2xl font-black text-brand-navy tracking-tight">
+                  $31,500 <span className="text-xs font-extrabold">MXN</span>
+                </span>
+              </div>
+            </div>
+
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl py-2 px-4 inline-flex items-center gap-2 mb-5 border border-brand-cyan/10 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
+              <span className="text-[11px] font-extrabold text-brand-navy">
+                Válido únicamente hasta el <span className="text-brand-cyan underline decoration-2 decoration-brand-cyan/30">25 de junio</span>
+              </span>
+            </div>
+
+            <button 
+              onClick={scrollToForm}
+              className="w-full bg-brand-cyan text-white py-3.5 rounded-2xl font-bold text-sm shadow-xl shadow-brand-cyan/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            >
+              Agendar Cita <ChevronRight size={16} />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Main Advantage Section */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-md mx-auto">
