@@ -192,7 +192,7 @@ export default function App() {
             <div className="bg-white/80 backdrop-blur-sm rounded-xl py-2 px-4 inline-flex items-center gap-2 mb-5 border border-brand-cyan/10 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-brand-cyan animate-pulse" />
               <span className="text-[11px] font-extrabold text-brand-navy">
-                Válido únicamente hasta el <span className="text-brand-cyan underline decoration-2 decoration-brand-cyan/30">25 de junio</span>
+                Válido por tiempo limitado
               </span>
             </div>
 
