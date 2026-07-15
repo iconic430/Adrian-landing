@@ -94,7 +94,7 @@ export default function App() {
               <span>19 AÑOS DE EXPERIENCIA</span>
             </div>
             <h1 className="text-4xl font-extrabold text-brand-navy leading-tight mb-4">
-              Recupere su Sonrisa con <span className="text-brand-cyan">Tecnología de Punta</span>
+              Recupere su Sonrisa con <span className="text-brand-cyan">Tecnología de Punta</span> en Solo <span className="text-brand-cyan">Dos Sesiones</span>
             </h1>
             <p className="text-base text-brand-steel mb-8 leading-relaxed px-2">
               Especialistas en implantes dentales para pacientes de Arizona y Sonora. Resultados garantizados con análisis digital.
@@ -120,14 +120,14 @@ export default function App() {
                     />
                   ))}
                   <div className="w-10 h-10 rounded-full border-2 border-white bg-brand-cyan flex items-center justify-center text-[10px] text-white font-bold shadow-sm">
-                    +50
+                    +150
                   </div>
                 </div>
                 <div className="text-xs">
                   <div className="flex justify-center text-yellow-400 mb-1">
                     {[1,2,3,4,5].map(i => <Star key={i} size={12} fill="currentColor" />)}
                   </div>
-                  <span className="text-brand-steel font-medium">Más de 50 reseñas positivas de pacientes felices</span>
+                  <span className="text-brand-steel font-medium">Más de 150 reseñas positivas de pacientes felices</span>
                 </div>
               </div>
             </div>
@@ -160,18 +160,44 @@ export default function App() {
             <div className="absolute top-0 right-0 -mr-6 -mt-6 w-24 h-24 bg-brand-cyan/5 rounded-full" />
             
             <span className="inline-block bg-brand-cyan text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-md shadow-brand-cyan/10">
-              Oferta Especial Limitada
+              Paquete Todo Incluido
             </span>
             
             <h3 className="text-xl font-extrabold text-brand-navy mb-2">
-              Tratamiento de Implantes Dentales
+              Paquete de Implante Dental Premium
             </h3>
             
-            <p className="text-xs text-brand-steel mb-5 px-4 leading-relaxed">
-              Recupere su sonrisa definitiva con tecnología digital avanzada y materiales de gama premium.
+            <p className="text-xs text-brand-steel mb-4 px-4 leading-relaxed">
+              Restauración en solo <span className="text-brand-cyan font-bold">dos sesiones</span>, utilizando tecnología avanzada.
             </p>
 
-            <div className="flex items-center justify-center gap-4 mb-5">
+            {/* List of elements included in the package */}
+            <div className="bg-white/70 backdrop-blur-sm border border-brand-cyan/15 rounded-2xl p-4 mb-5 text-left">
+              <p className="text-[11px] font-black text-brand-navy uppercase tracking-wider mb-2.5 pb-1.5 border-b border-brand-cyan/10 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
+                ¿Qué incluye tu paquete?
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-start gap-2 text-xs text-brand-navy">
+                  <CheckCircle2 size={14} className="text-brand-cyan shrink-0 mt-0.5" />
+                  <span><strong>Escaneo Intraoral 3D:</strong> Sin moldes molestos de pasta tradicional.</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-brand-navy">
+                  <CheckCircle2 size={14} className="text-brand-cyan shrink-0 mt-0.5" />
+                  <span><strong>Diseño Digital de Sonrisa:</strong> verás como quedará tu sonrisa antes de comenzar el tratamiento</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-brand-navy">
+                  <CheckCircle2 size={14} className="text-brand-cyan shrink-0 mt-0.5" />
+                  <span><strong>Materiales Premium:</strong> Implante y corona con titanio o cerámica bio-compatibles de alta durabilidad.</span>
+                </li>
+                <li className="flex items-start gap-2 text-xs text-brand-navy">
+                  <CheckCircle2 size={14} className="text-brand-cyan shrink-0 mt-0.5" />
+                  <span><strong>Análisis Clínico Computarizado:</strong> Diagnóstico integral y colocación guiada por computadora.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex items-center justify-center gap-4 mb-5 bg-white/40 py-2.5 rounded-xl border border-brand-cyan/5">
               <div className="text-left">
                 <span className="text-[10px] text-brand-steel font-extrabold block uppercase tracking-wider mb-0.5">Antes</span>
                 <span className="text-base line-through text-brand-steel/60 font-semibold decoration-red-500 decoration-2">
@@ -215,29 +241,6 @@ export default function App() {
           </div>
           
           <div className="space-y-6">
-            <div className="p-6 rounded-3xl bg-brand-navy text-white shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <MonitorSmartphone size={80} />
-              </div>
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <div className="w-8 h-8 bg-brand-cyan rounded-lg flex items-center justify-center">
-                  <CheckCircle2 size={18} />
-                </div>
-                Nuestra Ventaja Digital
-              </h3>
-              <p className="text-sm text-gray-300 mb-6 leading-relaxed">
-                Utilizamos análisis computarizado y renderizado 3D para que vea su resultado final antes de iniciar. Esto garantiza precisión absoluta en cada implante.
-              </p>
-              <ul className="grid grid-cols-1 gap-3 mb-6">
-                <li className="flex items-center gap-2 text-xs"><CheckCircle2 size={14} className="text-brand-cyan" /> Escaneo Intraoral 3D</li>
-                <li className="flex items-center gap-2 text-xs"><CheckCircle2 size={14} className="text-brand-cyan" /> Diseño Digital de Sonrisa</li>
-                <li className="flex items-center gap-2 text-xs"><CheckCircle2 size={14} className="text-brand-cyan" /> Materiales Premium (Titanio/Cerámica)</li>
-              </ul>
-              <button onClick={scrollToForm} className="w-full bg-brand-cyan py-3 rounded-xl font-bold text-sm active:scale-95 transition-all">
-                Agendar Cita
-              </button>
-            </div>
-
             <div className="p-6 rounded-3xl border border-gray-100 bg-gray-50 flex flex-col gap-5">
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] uppercase tracking-wider font-extrabold text-brand-cyan">Cruzando la Frontera por tu Sonrisa</span>
